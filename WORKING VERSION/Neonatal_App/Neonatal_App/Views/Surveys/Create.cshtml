@@ -1,0 +1,56 @@
+﻿@model Neonatal_App.Models.Survey
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<!--begin form-->
+<form action="Create" method="post">
+
+    <h4>Create New Survey</h4>
+    <hr />
+
+    <div class="form-group">
+        @Html.AntiForgeryToken()
+        @Html.LabelFor(model => model.client_id, "client_id", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("client_id", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.client_id, "", new { @class = "text-danger" })
+        </div>        
+    </div>
+
+
+    <h3>1. Please enter the mother's race.</h3>
+    <label for="Non-Hispanic African American">@Html.RadioButtonFor(m => m.Q1_race, "1") Non-Hispanic African American</label><br>
+    <label for="Non-Hispanic White">@Html.RadioButtonFor(m => m.Q1_race, "2") Non-Hispanic White</label><br>
+    <label for="Non-Hispanic Asian">@Html.RadioButtonFor(m => m.Q1_race, "3") Non-Hispanic Asian</label><br>
+    <label for="Hispanic/Latino">@Html.RadioButtonFor(m => m.Q1_race, "4") Hispanic/Latino</label><br>
+    <label for="Non-Hispanic Other">@Html.RadioButtonFor(m => m.Q1_race, "5") Non-Hispanic Other</label><br>
+
+    <h3>2. Please enter the mother's ward.</h3>
+    <input type="number" name="q2" value="1" id="Q4_ward"><br>
+
+    <h3>3. Is this your first child?</h3>
+    @Html.RadioButtonFor(m => m.Q3_first_child, "1") Yes<br>
+    @Html.RadioButtonFor(m => m.Q3_first_child, "2") No<br>
+    @Html.RadioButtonFor(m => m.Q3_first_child, "3") Prefer not to comment/Unsure<br>
+
+    <h3>4. Was your previous child(ren) delivered prematurely?</h3>
+    @Html.RadioButtonFor(m => m.Q4_prem_birth, "1") Yes<br>
+    @Html.RadioButtonFor(m => m.Q4_prem_birth, "2") No<br>
+    @Html.RadioButtonFor(m => m.Q4_prem_birth, "3") Prefer not to comment/Unsure<br>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>  
+</form>
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
