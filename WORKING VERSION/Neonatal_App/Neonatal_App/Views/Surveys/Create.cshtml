@@ -10,16 +10,18 @@
     <h4>Create New Survey</h4>
     <hr />
 
+    <h5>Please choose the mother's name from the dropdown below</h5>
     <div class="form-group">
         @Html.AntiForgeryToken()
-        @Html.LabelFor(model => model.client_id, "client_id", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.client_id, "", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownList("client_id", null, htmlAttributes: new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.client_id, "", new { @class = "text-danger" })
         </div>        
     </div>
+    <br />
+    <br />
 
-     
     <h5>1. Please enter the mother's race.</h5>
     @Html.RadioButtonFor(m => m.Q1_race, "1") Non-Hispanic African American<br>
     @Html.RadioButtonFor(m => m.Q1_race, "2") Non-Hispanic White<br>
@@ -27,8 +29,15 @@
     @Html.RadioButtonFor(m => m.Q1_race, "4") Hispanic/Latino<br>
     @Html.RadioButtonFor(m => m.Q1_race, "5") Non-Hispanic Other<br>
 
+    <!--non-functional and does not send to db-->
     <h5>2. Please enter the mother's ward.</h5>
-    <input type="number" name="q2" value="1" id="Q4_ward"><br>
+    @Html.DropDownList("Ward", new List<SelectListItem>
+    {
+        new SelectListItem{ Text="Ward 1 - Fairfax", Value = "1" },
+        new SelectListItem{ Text="Ward 2 - Central", Value = "2" },
+        new SelectListItem{ Text="Ward 3 - Buckeye", Value = "3" },
+    }) 
+    <br />
 
     <h5>3. Is this your first child?</h5>
     @Html.RadioButtonFor(m => m.Q3_first_child, "1") Yes<br>
@@ -39,14 +48,15 @@
     @Html.RadioButtonFor(m => m.Q4_prem_birth, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q4_prem_birth, "2") No<br>
     @Html.RadioButtonFor(m => m.Q4_prem_birth, "3") Prefer not to comment/Unsure<br>
+    <br />
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Create" class="btn btn-default" />
         </div>
-    </div>  
+    </div>
 </form>
-
+<br />
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>

@@ -17,7 +17,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.id)
 
-        <h5><b>Please choose the client's name from the dropdown below</b></h5>
+        <h5><b>Please choose the mother's name from the dropdown below</b></h5>
         <div class="form-group">
             @Html.LabelFor(model => model.client_id, "", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -35,8 +35,13 @@
         <label for="Non-Hispanic Other">@Html.RadioButtonFor(m => m.Q1_race, "5") Non-Hispanic Other</label><br>
         <br />
 
-        <h5><b>2. Please enter the mother's ward.</b></h5>
-        <input type="number" name="q2" value="1" id="Q4_ward"><br>
+        <h5>2. Please enter the mother's ward.</h5>
+        @Html.DropDownList("Ward", new List<SelectListItem>
+        {
+            new SelectListItem{ Text="Ward 1 - Fairfax", Value = "1" },
+            new SelectListItem{ Text="Ward 2 - Central", Value = "2" },
+            new SelectListItem{ Text="Ward 3 - Buckeye", Value = "3" },
+        })
         <br />
 
         <h5><b>3. Is this your first child?</b></h5>
