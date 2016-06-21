@@ -4,39 +4,51 @@
     ViewBag.Title = "Index";
 }
 
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Information</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+    </head>
 
-<h4>Survey List</h4><!--changed from h2 to h4 for uniformity of pages-->
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-
-<table class="table">
-    <tr>
-        <th>
-            Name
-        </th>
-        <th>
-            Risk Score
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Client.first_name)
-                @Html.DisplayFor(modelItem => item.Client.last_name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.risk_score)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })
-            </td>
-        </tr>
-    }
-</table>
+    <body>
+        <!--begin table-->
+        <table>
+        <caption>Survey List</caption>
+            <thead>
+                <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Details</th>
+                <th scope="col">Make Changes</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                <td colspan="3">@Html.ActionLink("Create New", "Create")</td>
+                </tr>
+            </tfoot>
+            @foreach (var item in Model)
+            {
+            <tbody>
+                <tr>
+                <th scope="row">
+                    @Html.DisplayFor(modelItem => item.Client.first_name)
+                    @Html.DisplayFor(modelItem => item.Client.last_name)
+                </th>
+                <td>
+                    @Html.ActionLink("Click Here", "Details", new { id = item.id })
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+                </tr>
+            </tbody>
+            }
+        </table>
+        <!--end table-->
+    </body>
+</html>
