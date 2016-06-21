@@ -2,7 +2,251 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Clients</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+
+        <!--begin CSS-->
+        <style>
+            .modal-header, h4, .close {
+                background-color: #fb0d58;
+                color: white;
+                text-align: center;
+                font-size: 30px;
+            }
+
+            .modal-footer {
+                background-color: #f9f9f9;
+            }
+
+            #myBtn2 {
+                background-color: #fb0d58;
+                border-color: #fb0d58;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" style="background-color:deeppink">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <span class="glyphicon glyphicon-heart-empty" style="font-size:9.3ex"></span>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Patients</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading" style="background-color: #ECF0F1">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <span class="glyphicon glyphicon-heart-empty" style="font-size:9.3ex; color:purple"></span>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Wards</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <span class="glyphicon glyphicon-heart-empty" style="font-size:9.3ex; color: #e3dac9"></span>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Trigger the modal with a button -->
+                <!-- Modal -->
+                <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
+                <button type="button" class="btn btn-primary btn-lg" id="myBtn1">Register</button>
+                <button type="button" class="btn btn-primary btn-lg" id="myBtn2">Survey</button>
+
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header" style="padding:35px 50px;">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                            </div>
+                            <div class="modal-body" style="padding:40px 50px;">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <label for="usrname"><span class="glyphicon glyphicon-plus-sign"></span> Username</label>
+                                        <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="psw"><span class="glyphicon glyphicon-heart"></span> Password</label>
+                                        <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="" checked>Remember me</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                <p>Not a member? <a href="#">Sign Up</a></p>
+                                <p>Forgot <a href="#">Password?</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="morris-area-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Modal -->
+            <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header" style="padding:35px 50px;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4><b>Register For Access</b> <span class="glyphicon glyphicon-pencil"></span> </h4>
+                        </div>
+                        <div class="modal-body" style="padding:40px 50px;">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-first-name">First name</label>
+                                    <input type="text" name="form-first-name" placeholder="First name" class="form-first-name form-control" id="form-first-name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-last-name">Last name</label>
+                                    <input type="text" name="form-last-name" placeholder="Last name" class="form-last-name form-control" id="form-last-name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-email">Email</label>
+                                    <input type="text" name="form-email" placeholder="Email" class="form-email form-control" id="form-email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-organization">Organization</label>
+                                    <input type="text" name="form-organization" placeholder="Organization" class="form-organization form-control" id="form-organization">
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="" checked>Remember me</label>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Request Access</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal fade" id="myModal2" role="dialog">
+                <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:35px 50px;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4><b>Start Survey</b> <span class="glyphicon glyphicon-ok"></span> </h4>
+                    </div>
+                    <div class="modal-body" style="padding:40px 50px;">
+                        <form action="Create" method="post">
+
+                        <h4>Create New Survey</h4>
+                        <hr />
+                        <!--begin questions
+                        <!--<h5>Please choose the mother's name from the dropdown below</h5>
+                        <div class="form-group">
+                       
+                        <br />
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btn-default" />
+                            </div>
+                        </div>
+                           --end survey questions -->
+                </form>   
+            </div>
+        </div>
+    </div>
 </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.0/raphael-min.js"></script>
+
+    <!--begin jquery-->
+    <script>
+    $(document).ready(function(){
+      $("#myBtn").click(function(){
+        $("#myModal").modal();
+      });
+    });
+
+    $(document).ready(function(){
+      $("#myBtn1").click(function(){
+        $("#myModal1").modal();
+      });
+    });
+
+    $(document).ready(function(){
+      $("#myBtn2").click(function(){
+        $("#myModal2").modal();
+      });
+    });
+    </script>
+    </body>
+</html>
 
