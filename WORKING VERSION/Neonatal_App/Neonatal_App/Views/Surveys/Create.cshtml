@@ -9,8 +9,12 @@
 
     <h4>Create New Survey</h4>
     <hr />
+    <!--hidden id field-->
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.id)
 
     <h5>Please choose the mother's name from the dropdown below</h5>
+    <!--choose client by id-->
     <div class="form-group">
         @Html.AntiForgeryToken()
         @Html.LabelFor(model => model.client_id, "", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -20,6 +24,7 @@
         </div>
     </div>
     <br />
+    <!--begin survey-->
     <h5>1. Please enter the mother's race.</h5>
     @Html.RadioButtonFor(m => m.Q1_race, "1") Non-Hispanic African American<br>
     @Html.RadioButtonFor(m => m.Q1_race, "2") Non-Hispanic White<br>
@@ -31,7 +36,7 @@
     <!--use radiobuttons as stand-in-->
     <h5>2. Please enter the mother's ward.</h5>
     @Html.RadioButtonFor(m => m.Q2_ward, "1") Ward 1<br>
-    @Html.RadioButtonFor(m => m.Q2_ward, "2") War 2<br>
+    @Html.RadioButtonFor(m => m.Q2_ward, "2") Wars 2<br>
     @Html.RadioButtonFor(m => m.Q2_ward, "3") Ward 3<br>
     @Html.RadioButtonFor(m => m.Q2_ward, "4") Ward 4<br>
     @Html.RadioButtonFor(m => m.Q2_ward, "5") Ward 5<br>
@@ -74,12 +79,6 @@
     @Html.RadioButtonFor(m => m.Q3_first_child, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q3_first_child, "2") No<br>
     @Html.RadioButtonFor(m => m.Q3_first_child, "3") Prefer not to comment/Unsure<br>
-
-    <h5>3. Was your previous child(ren) delivered prematurely?</h5>
-    @Html.RadioButtonFor(m => m.Q4_prem_birth, "1") Yes<br>
-    @Html.RadioButtonFor(m => m.Q4_prem_birth, "2") No<br>
-    @Html.RadioButtonFor(m => m.Q4_prem_birth, "3") Prefer not to comment/Unsure<br>
-    <br />
 
     <h5>4. Was your previous child(ren) delivered prematurely?</h5>
     @Html.RadioButtonFor(m => m.Q4_prem_birth, "1") Yes<br>
@@ -133,63 +132,59 @@
     @Html.RadioButtonFor(m => m.Q11_fam_alcohol, "3") Prefer not to comment/Unsure<br>
 
 
-    <h6>12. Has anyone in your family used drugs other than tobacco and alcohol?</h6>
+    <h5>12. Has anyone in your family used drugs other than tobacco and alcohol?</h5>
     @Html.RadioButtonFor(m => m.Q12_fam_drug, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q12_fam_drug, "2") No<br>
     @Html.RadioButtonFor(m => m.Q12_fam_drug, "3") Prefer not to comment/Unsure<br>
 
 
-    <h3>13. Have you used any drugs other than alcohol or tobacco in the last year?</h3>
+    <h5>13. Have you used any drugs other than alcohol or tobacco in the last year?</h5>
     @Html.RadioButtonFor(m => m.Q13_drug, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q13_drug, "2") No<br>
     @Html.RadioButtonFor(m => m.Q13_drug, "3") Prefer not to comment/Unsure<br>
 
 
-    <h3>14. Do you feel safe in your own home?</h3>
+    <h5>14. Do you feel safe in your own home?</h5>
     @Html.RadioButtonFor(m => m.Q14_safe_nbhood, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q14_safe_nbhood, "2") No<br>
     @Html.RadioButtonFor(m => m.Q14_safe_nbhood, "3") Prefer not to comment/Unsure<br>
 
 
-    <h3>15. Do you feel safe in your neighborhood?</h3>
+    <h5>15. Do you feel safe in your neighborhood?</h5>
     @Html.RadioButtonFor(m => m.Q15_safe_home, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q15_safe_home, "2") No<br>
     @Html.RadioButtonFor(m => m.Q15_safe_home, "3") Prefer not to comment/Unsure<br>
 
 
-    <h3>16. Do you currently have a chronic illness?</h3>
+    <h5>16. Do you currently have a chronic illness?</h5>
     @Html.RadioButtonFor(m => m.Q16_illness, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q16_illness, "2") No<br>
     @Html.RadioButtonFor(m => m.Q16_illness, "3") Prefer not to comment/Unsure<br>
 
 
-    <h3>17. Do you have reliable transportation?</h3>
+    <h5>17. Do you have reliable transportation?</h5>
     @Html.RadioButtonFor(m => m.Q17_transport, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q17_transport, "2") No<br>
     @Html.RadioButtonFor(m => m.Q17_transport, "3") Unsure<br>
 
 
-    <h3>18. Do you have reliable internet access in your home?</h3>
+    <h5>18. Do you have reliable internet access in your home?</h5>
     @Html.RadioButtonFor(m => m.Q18_internet, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q18_internet, "2") No<br>
     @Html.RadioButtonFor(m => m.Q18_internet, "3") Unsure<br>
 
 
-    <h3>19. Do you have mobile internet access?</h3>
+    <h5>19. Do you have mobile internet access?</h5>
     @Html.RadioButtonFor(m => m.Q19_mob_internet, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q19_mob_internet, "2") No<br>
     @Html.RadioButtonFor(m => m.Q19_mob_internet, "3") Unsure<br>
 
+    <!--should be reworded-->
     <h5>20.Which of these would you say you eat on a daily basis?</h5>
-    <input type="checkbox" value="1" id="Q20_diet_a">Red meat<br>
-    <input type="checkbox" value="1" id="Q20_diet_b">White Meat<br>
-    <input type="checkbox" value="1" id="Q20_diet_c">Fish<br>
-    <input type="checkbox" value="1" id="Q20_diet_d">Vegetables<br>
-    <input type="checkbox" value="1" id="Q20_diet_e">Fruit<br>
-    <input type="checkbox" value="1" id="Q20_diet_f">Bread/Rice/Pasta/Potatoes(other carbohydrates)<br>
-    <input type="checkbox" value="1" id="Q20_diet_g">Milk and other dairy products<br>
-    <input type="checkbox" value="1" id="Q20_diet_h">Candy/Potato Chips/other junk food/high fat foods<br>
-
+    @Html.RadioButtonFor(m => m.Q20_diet, "1") A balanced diet including: milk and dairy, protein, fruits and vegetables<br>
+    @Html.RadioButtonFor(m => m.Q20_diet, "2") Somewhat balanced diet including: milk and dairy, protein, fruits and vegetables, some candy, potato chips, and pasta/potatoes(carbohydrates) <br>
+    @Html.RadioButtonFor(m => m.Q20_diet, "3") Mostly candy, potato chips, and fast food<br>
+    
     <h5>21. Do you receive any government assistance?</h5>
     @Html.RadioButtonFor(m => m.Q21_gov_assist, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q21_gov_assist, "2") No<br>
@@ -204,7 +199,7 @@
     @Html.RadioButtonFor(m => m.Q22_rel_income, "6") Prefer not to comment/Unsure<br>
 
 
-    <h3>23.What is the highest level of education you have completed?</h3>
+    <h5>23.What is the highest level of education you have completed?</h5>
     @Html.RadioButtonFor(m => m.Q23_education, "1") Less than high school diploma<br>
     @Html.RadioButtonFor(m => m.Q23_education, "2") High School Diploma<br>
     @Html.RadioButtonFor(m => m.Q23_education, "3") Some college but no degree<br>
