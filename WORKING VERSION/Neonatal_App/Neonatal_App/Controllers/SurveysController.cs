@@ -37,7 +37,7 @@ namespace Neonatal_App.Controllers
             return View(survey);
         }
 
-        // GET: Surveys/Create
+        // GET: Surveys/Create...
         public ActionResult Create()
         {
             ViewBag.client_id = new SelectList(db.Clients, "id", "first_name");
@@ -53,9 +53,30 @@ namespace Neonatal_App.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Surveys.Add(survey);
+                // ENTER RISK SCORE CODE HERE!!!
+                double risk_Score = 0;
+                {
+                    int race = Convert.ToInt32(survey.Q1_race);
+
+                    if (race == 1)
+                    {
+                        risk_Score += 2;
+                    }
+                    else
+                    {
+                        risk_Score += 0;
+                    }
+
+                    survey.risk_score += survey.Q1_race;
+                }
+            // Calc results and save in Risk Analysis
+            // db.surveys.add();
+
+            db.Surveys.Add(survey);
                 db.SaveChanges();
                 return RedirectToAction("Index");
+
+
             }
 
             ViewBag.client_id = new SelectList(db.Clients, "id", "first_name", survey.client_id);
