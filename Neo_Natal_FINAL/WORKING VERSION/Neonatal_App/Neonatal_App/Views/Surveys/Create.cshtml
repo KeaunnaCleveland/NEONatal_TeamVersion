@@ -1,0 +1,80 @@
+﻿@model Neonatal_App.Models.Survey
+
+@{
+    ViewBag.Title = "Create";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/themes/base/css")
+@Styles.Render("~/Content/css")
+@Styles.Render("~/Content/bootstrap.min.css")
+@Styles.Render("~/Content/custom.css")
+<!--begin form-->
+
+<h4>Create New Survey</h4>
+<hr />
+
+<div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="padding:35px 50px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4><b>Start Survey</b> <span class="glyphicon glyphicon-ok"></span> </h4>
+            </div>
+            <div class="modal-body" style="padding:40px 50px;">
+                <form role="form">
+                    <div class="form-group">
+                        <h3>1. Please enter the mother's race.</h3>
+                        <label for="Non-Hispanic African American">@Html.RadioButtonFor(m => m.Q1_race, "1") Non-Hispanic African American</label><br>
+                        <label for="Non-Hispanic White">@Html.RadioButtonFor(m => m.Q1_race, "2") Non-Hispanic White</label><br>
+                        <label for="Non-Hispanic Asian">@Html.RadioButtonFor(m => m.Q1_race, "3") Non-Hispanic Asian</label><br>
+                        <label for="Hispanic/Latino">@Html.RadioButtonFor(m => m.Q1_race, "4") Hispanic/Latino</label><br>
+                        <label for="Non-Hispanic Other">@Html.RadioButtonFor(m => m.Q1_race, "5") Non-Hispanic Other</label><br>
+
+                        <h3>2. Please enter the mother's ward.</h3>
+                        <input type="number" name="q2" value="1" id="Q4_ward"><br>
+
+                        <h3>3. Is this your first child?</h3>
+                        @Html.RadioButtonFor(m => m.Q3_first_child, "1") Yes<br>
+                        @Html.RadioButtonFor(m => m.Q3_first_child, "2") No<br>
+                        @Html.RadioButtonFor(m => m.Q3_first_child, "3") Prefer not to comment/Unsure<br>
+
+                        <h3>4. Was your previous child(ren) delivered prematurely?</h3>
+                        @Html.RadioButtonFor(m => m.Q4_prem_birth, "1") Yes<br>
+                        @Html.RadioButtonFor(m => m.Q4_prem_birth, "2") No<br>
+                        @Html.RadioButtonFor(m => m.Q4_prem_birth, "3") Prefer not to comment/Unsure<br>
+                        <input type="submit" value="Create" class="btn btn-default" />
+
+
+                        <div id="submit">
+                            <br>
+                            <input type="submit" class="btn btn-danger btn-default pull-left" style="background-color:#25b8dc" value="Submit Answers">
+                        </div>
+                        </div>
+                    </div>
+            </div>
+            </div>
+            </div>
+
+
+                    <div>
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+
+                    @section Scripts {
+                        @Scripts.Render("~/bundles/jqueryval")
+                        @Scripts.Render("~/bundles/jquery")
+                        @Scripts.Render("~/bundles/bootstrap")
+
+
+                    }
+                    <script type='text/javascript'>
+                        $(document).ready(function () {
+                            //$("#myBtn").click(function(){
+                            $("#myModal2").modal();
+                            //});
+                        });
+                    </script>

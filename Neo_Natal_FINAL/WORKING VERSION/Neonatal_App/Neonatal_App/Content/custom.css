@@ -1,0 +1,14 @@
+﻿  .modal-header, h4, .close {
+      background-color: #fb0d58;
+      color:white;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+
+  #myBtn2{
+    background-color:#fb0d58;
+    border-color: #fb0d58;
+  }
