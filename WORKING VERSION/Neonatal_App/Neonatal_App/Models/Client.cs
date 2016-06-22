@@ -28,10 +28,6 @@ namespace Neonatal_App.Models
         [Column(TypeName = "date")]
         public DateTime DOB { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string ethnicity { get; set; }
-
         public int street_number { get; set; }
 
         [Required]
@@ -43,12 +39,12 @@ namespace Neonatal_App.Models
         public string city { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string zip_code { get; set; }
+        public int zip_code { get; set; }
 
         [Required]
         [StringLength(50)]
         public string county { get; set; }
+
 
         public int ward { get; set; }
 
