@@ -88,9 +88,9 @@ namespace Neonatal_App.Controllers
             if (ModelState.IsValid)
             {
                 // ENTER RISK SCORE CODE HERE!!!
-               /* int  risk_score = 0;
-                {
-                    int race = convert.toint32(survey.q1_race);
+           int  risk_score = 0;
+                
+                    int race = Convert.ToInt32(survey.Q1_race);
 
                     if (race == 1)
                     {
@@ -100,9 +100,9 @@ namespace Neonatal_App.Controllers
                     {
                         risk_score += 0;
                     }
-                    survey.risk_score += risk_score;
+                    survey.risk_score = risk_score;
                     
-                }*/
+                
             
 
                 db.Entry(survey).State = EntityState.Modified;
