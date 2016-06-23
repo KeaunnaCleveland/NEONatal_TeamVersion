@@ -18,6 +18,20 @@ namespace Neonatal_App.Controllers
         public ActionResult Index()
         {
             var surveys = db.Surveys.Include(s => s.Client);
+            /*var selectWard = from m in db.Surveys
+                            where m.Q2_ward > 0
+                            select m;*/
+            return View(surveys.ToList());
+        }
+
+        //GET Surveys/RiskScore/5
+
+        public ActionResult RiskScore(int? id)
+        {
+            var surveys = db.Surveys.Include(s => s.Client);
+            /*var riskScore = from m in db.Surveys
+                            where m.risk_score == 1
+                            select m;*/
             return View(surveys.ToList());
         }
 
@@ -53,6 +67,7 @@ namespace Neonatal_App.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 db.Surveys.Add(survey);
                 db.SaveChanges();
                 return RedirectToAction("Index");

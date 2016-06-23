@@ -259,6 +259,7 @@
     <Content Include="Views\Surveys\Details.cshtml" />
     <Content Include="Views\Surveys\Edit.cshtml" />
     <Content Include="Views\Surveys\Index.cshtml" />
+    <Content Include="Views\Surveys\RiskScore.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
