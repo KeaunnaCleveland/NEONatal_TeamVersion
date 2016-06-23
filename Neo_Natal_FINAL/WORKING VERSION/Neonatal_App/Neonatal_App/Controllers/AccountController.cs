@@ -139,7 +139,7 @@ namespace Neonatal_App.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            return PartialView();
         }
 
         //

@@ -41,7 +41,7 @@ namespace Neonatal_App.Controllers
         public ActionResult Create()
         {
             ViewBag.client_id = new SelectList(db.Clients, "id", "first_name");
-            return View();
+            return PartialView();
         }
 
         // POST: Surveys/Create
