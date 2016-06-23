@@ -37,7 +37,7 @@ namespace Neonatal_App.Controllers
             return View(survey);
         }
 
-        // GET: Surveys/Create...
+        // GET: Surveys/Create
         public ActionResult Create()
         {
             ViewBag.client_id = new SelectList(db.Clients, "id", "first_name");
@@ -50,120 +50,17 @@ namespace Neonatal_App.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,client_id,risk_score,Q1_race,Q2_ward,Q3_first_child,Q4_prem_birth,Q5_obgyn,Q6_age,Q7_stress,Q8_smoker,Q9_fam_smoker,Q10_alcohol,Q11_fam_alcohol,Q12_fam_drug,Q13_drug,Q14_safe_nbhood,Q15_safe_home,Q16_illness,Q17_transport,Q18_internet,Q19_mob_internet,Q20_diet,Q21_gov_assist,Q22_rel_income,Q23_education,creation_date,update_date")] Survey survey)
-
         {
             if (ModelState.IsValid)
             {
-                // ENTER RISK SCORE CODE HERE!!!
-                // ENTER RISK SCORE CODE HERE!!!
+                db.Surveys.Add(survey);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
-                double risk_Score = 0;
-                {
-                    int race = Convert.ToInt32(survey.Q1_race);
-
-                    if (race == 1)
-                    {
-                        risk_Score += 2;
-                    }
-                    else
-                    {
-                        risk_Score += 0;
-                    }
-
-                    survey.risk_score += survey.Q1_race;
-
-
-                    //Question 4. Ward
-                    int ward = Convert.ToInt32(survey.Q2_ward);
-                    {
-
-                        if (ward == 1)
-                        {
-                            risk_Score += 53.2;
-                        }
-                        else if (ward == 2)
-                        {
-                            risk_Score += 18.6;
-                        }
-                        else if (ward == 3)
-                        {
-                            risk_Score += 18;
-                        }
-                        else if (ward == 4)
-                        {
-                            risk_Score += 16.8;
-                        }
-                        else if (ward == 5)
-                        {
-                            risk_Score += 36.8;
-                        }
-                        else if (ward == 6)
-                        {
-                            risk_Score += 15.4;
-                        }
-                        else if (ward == 7)
-                        {
-                            risk_Score += 19;
-                        }
-                        else if (ward == 8)
-                        {
-                            risk_Score += 15;
-                        }
-                        else if (ward == 9)
-                        {
-                            risk_Score += 33.4;
-                        }
-                        else if (ward == 10)
-                        {
-                            risk_Score += 32.4;
-                        }
-                        else if (ward == 11)
-                        {
-                            risk_Score += 20.6;
-                        }
-                        else if (ward == 12)
-                        {
-                            risk_Score += 21.2;
-                        }
-                        else if (ward == 13)
-                        {
-                            risk_Score += 16.2;
-                        }
-                        else if (ward == 14)
-                        {
-                            risk_Score += 21.4;
-                        }
-                        else if (ward == 15)
-                        {
-                            risk_Score += 38.2;
-                        }
-                        else if (ward == 16)
-                        {
-                            risk_Score += 31.6;
-                        }
-                       else if (ward==17)
-                        {
-                            risk_Score += 9.6;
-                        }
-
-                        survey.risk_score += survey.Q2_ward;
-
-                    }
-
-                
-                    // Calc results and save in Risk Analysis
-                    // db.surveys.add();
-
-                    db.Surveys.Add(survey);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-
-
-                }
-
-                //   ViewBag.client_id = new SelectList(db.Clients, "id", "first_name", survey.client_id);
-                return View(survey);
-            } }
+            ViewBag.client_id = new SelectList(db.Clients, "id", "first_name", survey.client_id);
+            return View(survey);
+        }
 
         // GET: Surveys/Edit/5
         public ActionResult Edit(int? id)
@@ -190,6 +87,24 @@ namespace Neonatal_App.Controllers
         {
             if (ModelState.IsValid)
             {
+                // ENTER RISK SCORE CODE HERE!!!
+               /* int  risk_score = 0;
+                {
+                    int race = convert.toint32(survey.q1_race);
+
+                    if (race == 1)
+                    {
+                        risk_score += 2;
+                    }
+                    else
+                    {
+                        risk_score += 0;
+                    }
+                    survey.risk_score += risk_score;
+                    
+                }*/
+            
+
                 db.Entry(survey).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
