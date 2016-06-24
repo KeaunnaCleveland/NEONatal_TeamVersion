@@ -3,7 +3,7 @@
     height: 0 auto;
 }  
 .modal-header, h4, .close {
-      background-color: #fb0d58;
+      background-color: cyan;
       color:white;
       text-align: center;
       font-size: 30px;
@@ -15,12 +15,4 @@
   #myBtn2{
     background-color:#fb0d58;
     border-color: #fb0d58;
-  }
-
-  #myBtn{
-      margin-top: 150%;
-  } 
-  
-  #myBtn1{
-     margin-top: 150%;
   }
