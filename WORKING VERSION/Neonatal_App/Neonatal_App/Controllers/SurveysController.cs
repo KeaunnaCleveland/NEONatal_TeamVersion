@@ -101,12 +101,7 @@ namespace Neonatal_App.Controllers
                     risk_score += 0;
 
                     survey.risk_score = risk_score;
-                
-
-             
-
-
-
+                }
 
                 db.Entry(survey).State = EntityState.Modified;
                 db.SaveChanges();
