@@ -4,9 +4,9 @@
     ViewBag.Title = "Delete";
 }
 
-<h4>DELETE this survey</h4>
+<h2>DELETE this survey</h2>
 
-<h4>Are you sure you want to delete this?</h4>
+<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>Survey</h4>
     <hr />
@@ -75,132 +75,135 @@
         @Html.RadioButtonFor(m => m.Q4_prem_birth, "2", new { disabled = "disabled" }) No<br>
         @Html.RadioButtonFor(m => m.Q4_prem_birth, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
 
-        <h5>5. What week of your pregnancy did you visit a prenatal healthcare professional?</h5>
-        @Html.RadioButtonFor(m => m.Q5_obgyn, "1", new { disabled = "disabled" }) 0-13 weeks (First Trimester)<br>
-        @Html.RadioButtonFor(m => m.Q5_obgyn, "2", new { disabled = "disabled" }) 14-26 weeks (Second Trimester)<br>
-        @Html.RadioButtonFor(m => m.Q5_obgyn, "3", new { disabled = "disabled" }) 27-40+ weeks (Third Trimester)<br>
-        @Html.RadioButtonFor(m => m.Q5_obgyn, "4", new { disabled = "disabled" }) I did not visit a prenatal healthcare professional<br>
-        @Html.RadioButtonFor(m => m.Q5_obgyn, "5", new { disabled = "disabled" }) Prefer not to coment/Unsure<br>
+        @*<h5>5. What week of your pregnancy did you visit a prenatal healthcare professional?</h5>
+            @Html.RadioButtonFor(m => m.Q5_obgyn, "1", new { disabled = "disabled" }) 0-13 weeks (First Trimester)<br>
+            @Html.RadioButtonFor(m => m.Q5_obgyn, "2", new { disabled = "disabled" }) 14-26 weeks (Second Trimester)<br>
+            @Html.RadioButtonFor(m => m.Q5_obgyn, "3", new { disabled = "disabled" }) 27-40+ weeks (Third Trimester)<br>
+            @Html.RadioButtonFor(m => m.Q5_obgyn, "4", new { disabled = "disabled" }) I did not visit a prenatal healthcare professional<br>
+            @Html.RadioButtonFor(m => m.Q5_obgyn, "5", new { disabled = "disabled" }) Prefer not to coment/Unsure<br>
 
 
-        <h5>6. How old are you?</h5>
-        @Html.RadioButtonFor(m => m.Q6_age, "1", new { disabled = "disabled" }) 13 years old or younger<br>
-        @Html.RadioButtonFor(m => m.Q6_age, "2", new { disabled = "disabled" }) 14 years old to 19 years old<br>
-        @Html.RadioButtonFor(m => m.Q6_age, "3", new { disabled = "disabled" }) 20 years old to 24 years old<br>
-        @Html.RadioButtonFor(m => m.Q6_age, "4", new { disabled = "disabled" }) 25 years old to 29 years old<br>
-        @Html.RadioButtonFor(m => m.Q6_age, "5", new { disabled = "disabled" }) 30 years old to 34 years old<br>
-        @Html.RadioButtonFor(m => m.Q6_age, "6", new { disabled = "disabled" }) 35 years old to 39 years old<br>
-        @Html.RadioButtonFor(m => m.Q6_age, "4", new { disabled = "disabled" }) 40 years old or older<br>
+            <h5>6. How old are you?</h5>
+            @Html.RadioButtonFor(m => m.Q6_age, "1", new { disabled = "disabled" }) 13 years old or younger<br>
+            @Html.RadioButtonFor(m => m.Q6_age, "2", new { disabled = "disabled" }) 14 years old to 19 years old<br>
+            @Html.RadioButtonFor(m => m.Q6_age, "3", new { disabled = "disabled" }) 20 years old to 24 years old<br>
+            @Html.RadioButtonFor(m => m.Q6_age, "4", new { disabled = "disabled" }) 25 years old to 29 years old<br>
+            @Html.RadioButtonFor(m => m.Q6_age, "5", new { disabled = "disabled" }) 30 years old to 34 years old<br>
+            @Html.RadioButtonFor(m => m.Q6_age, "6", new { disabled = "disabled" }) 35 years old to 39 years old<br>
+            @Html.RadioButtonFor(m => m.Q6_age, "4", new { disabled = "disabled" }) 40 years old or older<br>
 
-        <h5>7. What is your stress level on a daily basis?</h5>
-        @Html.RadioButtonFor(m => m.Q7_stress, "1", new { disabled = "disabled" }) Very high stress<br>
-        @Html.RadioButtonFor(m => m.Q7_stress, "2", new { disabled = "disabled" }) Somewhat stressed<br>
-        @Html.RadioButtonFor(m => m.Q7_stress, "3", new { disabled = "disabled" }) Neutral<br>
-        @Html.RadioButtonFor(m => m.Q7_stress, "4", new { disabled = "disabled" }) Somewhat relaxed<br>
-        @Html.RadioButtonFor(m => m.Q7_stress, "5", new { disabled = "disabled" }) Very relaxed<br>
+            <h5>7. What is your stress level on a daily basis?</h5>
+            @Html.RadioButtonFor(m => m.Q7_stress, "1", new { disabled = "disabled" }) Very high stress<br>
+            @Html.RadioButtonFor(m => m.Q7_stress, "2", new { disabled = "disabled" }) Somewhat stressed<br>
+            @Html.RadioButtonFor(m => m.Q7_stress, "3", new { disabled = "disabled" }) Neutral<br>
+            @Html.RadioButtonFor(m => m.Q7_stress, "4", new { disabled = "disabled" }) Somewhat relaxed<br>
+            @Html.RadioButtonFor(m => m.Q7_stress, "5", new { disabled = "disabled" }) Very relaxed<br>
 
 
-        <h5>8. Have you smoked a cigarette(used a tobacco product) in the last year?</h5>
-        @Html.RadioButtonFor(m => m.Q8_smoker, "1", new { disabled = "disabled" }) Yes<br>
-        @Html.RadioButtonFor(m => m.Q8_smoker, "2", new { disabled = "disabled" }) No<br>
-        @Html.RadioButtonFor(m => m.Q8_smoker, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
+            <h5>8. Have you smoked a cigarette(used a tobacco product) in the last year?</h5>
+            @Html.RadioButtonFor(m => m.Q8_smoker, "1", new { disabled = "disabled" }) Yes<br>
+            @Html.RadioButtonFor(m => m.Q8_smoker, "2", new { disabled = "disabled" }) No<br>
+            @Html.RadioButtonFor(m => m.Q8_smoker, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
 
-        <h5>9. Does anyone in your family/household smoke cigarettes or use tobacco?</h5>
-        @Html.RadioButtonFor(m => m.Q9_fam_smoker, "1", new { disabled = "disabled" }) Yes<br>
-        @Html.RadioButtonFor(m => m.Q9_fam_smoker, "2", new { disabled = "disabled" }) No<br>
-        @Html.RadioButtonFor(m => m.Q9_fam_smoker, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
+            <h5>9. Does anyone in your family/household smoke cigarettes or use tobacco?</h5>
+            @Html.RadioButtonFor(m => m.Q9_fam_smoker, "1", new { disabled = "disabled" }) Yes<br>
+            @Html.RadioButtonFor(m => m.Q9_fam_smoker, "2", new { disabled = "disabled" }) No<br>
+            @Html.RadioButtonFor(m => m.Q9_fam_smoker, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
+        *@
 
-        <h5>10. Have you drank alcohol in the last month?</h5>
+        <h5>5. Have you drank alcohol in the last month?</h5>
         @Html.RadioButtonFor(m => m.Q10_alcohol, "1", new { disabled = "disabled" }) Yes<br>
         @Html.RadioButtonFor(m => m.Q10_alcohol, "2", new { disabled = "disabled" }) No<br>
         @Html.RadioButtonFor(m => m.Q10_alcohol, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
 
 
-        <h5>11. Does anyone in your family/household drink alcohol on a weekly basis?</h5>
-        @Html.RadioButtonFor(m => m.Q11_fam_alcohol, "1", new { disabled = "disabled" }) Yes<br>
-        @Html.RadioButtonFor(m => m.Q11_fam_alcohol, "2", new { disabled = "disabled" }) No<br>
-        @Html.RadioButtonFor(m => m.Q11_fam_alcohol, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
+        @*<h5>11. Does anyone in your family/household drink alcohol on a weekly basis?</h5>
+            @Html.RadioButtonFor(m => m.Q11_fam_alcohol, "1", new { disabled = "disabled" }) Yes<br>
+            @Html.RadioButtonFor(m => m.Q11_fam_alcohol, "2", new { disabled = "disabled" }) No<br>
+            @Html.RadioButtonFor(m => m.Q11_fam_alcohol, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
 
 
-        <h5>12. Has anyone in your family used drugs other than tobacco and alcohol?</h5>
-        @Html.RadioButtonFor(m => m.Q12_fam_drug, "1", new { disabled = "disabled" }) Yes<br>
-        @Html.RadioButtonFor(m => m.Q12_fam_drug, "2", new { disabled = "disabled" }) No<br>
-        @Html.RadioButtonFor(m => m.Q12_fam_drug, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
+            <h5>12. Has anyone in your family used drugs other than tobacco and alcohol?</h5>
+            @Html.RadioButtonFor(m => m.Q12_fam_drug, "1", new { disabled = "disabled" }) Yes<br>
+            @Html.RadioButtonFor(m => m.Q12_fam_drug, "2", new { disabled = "disabled" }) No<br>
+            @Html.RadioButtonFor(m => m.Q12_fam_drug, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
 
 
-        <h5>13. Have you used any drugs other than alcohol or tobacco in the last year?</h5>
-        @Html.RadioButtonFor(m => m.Q13_drug, "1", new { disabled = "disabled" }) Yes<br>
-        @Html.RadioButtonFor(m => m.Q13_drug, "2", new { disabled = "disabled" }) No<br>
-        @Html.RadioButtonFor(m => m.Q13_drug, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
+            <h5>13. Have you used any drugs other than alcohol or tobacco in the last year?</h5>
+            @Html.RadioButtonFor(m => m.Q13_drug, "1", new { disabled = "disabled" }) Yes<br>
+            @Html.RadioButtonFor(m => m.Q13_drug, "2", new { disabled = "disabled" }) No<br>
+            @Html.RadioButtonFor(m => m.Q13_drug, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
 
 
-        <h5>14. Do you feel safe in your own home?</h5>
-        @Html.RadioButtonFor(m => m.Q14_safe_nbhood, "1", new { disabled = "disabled" }) Yes<br>
-        @Html.RadioButtonFor(m => m.Q14_safe_nbhood, "2", new { disabled = "disabled" }) No<br>
-        @Html.RadioButtonFor(m => m.Q14_safe_nbhood, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
+            <h5>14. Do you feel safe in your own home?</h5>
+            @Html.RadioButtonFor(m => m.Q14_safe_nbhood, "1", new { disabled = "disabled" }) Yes<br>
+            @Html.RadioButtonFor(m => m.Q14_safe_nbhood, "2", new { disabled = "disabled" }) No<br>
+            @Html.RadioButtonFor(m => m.Q14_safe_nbhood, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
 
 
-        <h5>15. Do you feel safe in your neighborhood?</h5>
-        @Html.RadioButtonFor(m => m.Q15_safe_home, "1", new { disabled = "disabled" }) Yes<br>
-        @Html.RadioButtonFor(m => m.Q15_safe_home, "2", new { disabled = "disabled" }) No<br>
-        @Html.RadioButtonFor(m => m.Q15_safe_home, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
+            <h5>15. Do you feel safe in your neighborhood?</h5>
+            @Html.RadioButtonFor(m => m.Q15_safe_home, "1", new { disabled = "disabled" }) Yes<br>
+            @Html.RadioButtonFor(m => m.Q15_safe_home, "2", new { disabled = "disabled" }) No<br>
+            @Html.RadioButtonFor(m => m.Q15_safe_home, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
 
 
-        <h5>16. Do you currently have a chronic illness?</h5>
-        @Html.RadioButtonFor(m => m.Q16_illness, "1", new { disabled = "disabled" }) Yes<br>
-        @Html.RadioButtonFor(m => m.Q16_illness, "2", new { disabled = "disabled" }) No<br>
-        @Html.RadioButtonFor(m => m.Q16_illness, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
+            <h5>16. Do you currently have a chronic illness?</h5>
+            @Html.RadioButtonFor(m => m.Q16_illness, "1", new { disabled = "disabled" }) Yes<br>
+            @Html.RadioButtonFor(m => m.Q16_illness, "2", new { disabled = "disabled" }) No<br>
+            @Html.RadioButtonFor(m => m.Q16_illness, "3", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
 
 
-        <h5>17. Do you have reliable transportation?</h5>
-        @Html.RadioButtonFor(m => m.Q17_transport, "1", new { disabled = "disabled" }) Yes<br>
-        @Html.RadioButtonFor(m => m.Q17_transport, "2", new { disabled = "disabled" }) No<br>
-        @Html.RadioButtonFor(m => m.Q17_transport, "3", new { disabled = "disabled" }) Unsure<br>
+            <h5>17. Do you have reliable transportation?</h5>
+            @Html.RadioButtonFor(m => m.Q17_transport, "1", new { disabled = "disabled" }) Yes<br>
+            @Html.RadioButtonFor(m => m.Q17_transport, "2", new { disabled = "disabled" }) No<br>
+            @Html.RadioButtonFor(m => m.Q17_transport, "3", new { disabled = "disabled" }) Unsure<br>
 
 
-        <h5>18. Do you have reliable internet access in your home?</h5>
-        @Html.RadioButtonFor(m => m.Q18_internet, "1", new { disabled = "disabled" }) Yes<br>
-        @Html.RadioButtonFor(m => m.Q18_internet, "2", new { disabled = "disabled" }) No<br>
-        @Html.RadioButtonFor(m => m.Q18_internet, "3", new { disabled = "disabled" }) Unsure<br>
+            <h5>18. Do you have reliable internet access in your home?</h5>
+            @Html.RadioButtonFor(m => m.Q18_internet, "1", new { disabled = "disabled" }) Yes<br>
+            @Html.RadioButtonFor(m => m.Q18_internet, "2", new { disabled = "disabled" }) No<br>
+            @Html.RadioButtonFor(m => m.Q18_internet, "3", new { disabled = "disabled" }) Unsure<br>
 
 
-        <h5>19. Do you have mobile internet access?</h5>
-        @Html.RadioButtonFor(m => m.Q19_mob_internet, "1", new { disabled = "disabled" }) Yes<br>
-        @Html.RadioButtonFor(m => m.Q19_mob_internet, "2", new { disabled = "disabled" }) No<br>
-        @Html.RadioButtonFor(m => m.Q19_mob_internet, "3", new { disabled = "disabled" }) Unsure<br>
+            <h5>19. Do you have mobile internet access?</h5>
+            @Html.RadioButtonFor(m => m.Q19_mob_internet, "1", new { disabled = "disabled" }) Yes<br>
+            @Html.RadioButtonFor(m => m.Q19_mob_internet, "2", new { disabled = "disabled" }) No<br>
+            @Html.RadioButtonFor(m => m.Q19_mob_internet, "3", new { disabled = "disabled" }) Unsure<br>
 
-        <h5>20.Which of these would you say you eat on a daily basis?</h5>
-        @Html.RadioButtonFor(m => m.Q20_diet, "1", new { disabled = "disabled" }) A balanced diet including: milk and dairy, protein, fruits and vegetables<br>
-        @Html.RadioButtonFor(m => m.Q20_diet, "2", new { disabled = "disabled" }) Somewhat balanced diet including: milk and dairy, protein, fruits and vegetables, some candy, potato chips, and pasta/potatoes(carbohydrates) <br>
-        @Html.RadioButtonFor(m => m.Q20_diet, "3", new { disabled = "disabled" }) Mostly candy, potato chips, and fast food<br>
-        
-        <h5>21. Do you receive any government assistance?</h5>
-        @Html.RadioButtonFor(m => m.Q21_gov_assist, "1", new { disabled = "disabled" }) Yes<br>
-        @Html.RadioButtonFor(m => m.Q21_gov_assist, "2", new { disabled = "disabled" }) No<br>
-        @Html.RadioButtonFor(m => m.Q21_gov_assist, "3", new { disabled = "disabled" }) Unsure<br>
+            <h5>20.Which of these would you say you eat on a daily basis?</h5>
+            @Html.RadioButtonFor(m => m.Q20_diet, "1", new { disabled = "disabled" }) A balanced diet including: milk and dairy, protein, fruits and vegetables<br>
+            @Html.RadioButtonFor(m => m.Q20_diet, "2", new { disabled = "disabled" }) Somewhat balanced diet including: milk and dairy, protein, fruits and vegetables, some candy, potato chips, and pasta/potatoes(carbohydrates) <br>
+            @Html.RadioButtonFor(m => m.Q20_diet, "3", new { disabled = "disabled" }) Mostly candy, potato chips, and fast food<br>
 
-        <h5>22. What is your yearly household income?</h5>
-        @Html.RadioButtonFor(m => m.Q22_rel_income, "1", new { disabled = "disabled" }) under $15,000<br>
-        @Html.RadioButtonFor(m => m.Q22_rel_income, "2", new { disabled = "disabled" }) $15,000-$25,000<br>
-        @Html.RadioButtonFor(m => m.Q22_rel_income, "3", new { disabled = "disabled" }) $25,000-$50,000<br>
-        @Html.RadioButtonFor(m => m.Q22_rel_income, "4", new { disabled = "disabled" }) $50,000-$75,000<br>
-        @Html.RadioButtonFor(m => m.Q22_rel_income, "5", new { disabled = "disabled" }) Above $75,000<br>
-        @Html.RadioButtonFor(m => m.Q22_rel_income, "6", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
+            <h5>21. Do you receive any government assistance?</h5>
+            @Html.RadioButtonFor(m => m.Q21_gov_assist, "1", new { disabled = "disabled" }) Yes<br>
+            @Html.RadioButtonFor(m => m.Q21_gov_assist, "2", new { disabled = "disabled" }) No<br>
+            @Html.RadioButtonFor(m => m.Q21_gov_assist, "3", new { disabled = "disabled" }) Unsure<br>
+
+            <h5>22. What is your yearly household income?</h5>
+            @Html.RadioButtonFor(m => m.Q22_rel_income, "1", new { disabled = "disabled" }) under $15,000<br>
+            @Html.RadioButtonFor(m => m.Q22_rel_income, "2", new { disabled = "disabled" }) $15,000-$25,000<br>
+            @Html.RadioButtonFor(m => m.Q22_rel_income, "3", new { disabled = "disabled" }) $25,000-$50,000<br>
+            @Html.RadioButtonFor(m => m.Q22_rel_income, "4", new { disabled = "disabled" }) $50,000-$75,000<br>
+            @Html.RadioButtonFor(m => m.Q22_rel_income, "5", new { disabled = "disabled" }) Above $75,000<br>
+            @Html.RadioButtonFor(m => m.Q22_rel_income, "6", new { disabled = "disabled" }) Prefer not to comment/Unsure<br>
 
 
-        <h5>23.What is the highest level of education you have completed?</h5>
-        @Html.RadioButtonFor(m => m.Q23_education, "1", new { disabled = "disabled" }) Less than high school diploma<br>
-        @Html.RadioButtonFor(m => m.Q23_education, "2", new { disabled = "disabled" }) High School Diploma<br>
-        @Html.RadioButtonFor(m => m.Q23_education, "3", new { disabled = "disabled" }) Some college but no degree<br>
-        @Html.RadioButtonFor(m => m.Q23_education, "4", new { disabled = "disabled" }) Technical Degree<br>
-        @Html.RadioButtonFor(m => m.Q23_education, "5", new { disabled = "disabled" }) Associates Degree<br>
-        @Html.RadioButtonFor(m => m.Q23_education, "6", new { disabled = "disabled" }) Bachelors Degree or Above<br>
+            <h5>23.What is the highest level of education you have completed?</h5>
+            @Html.RadioButtonFor(m => m.Q23_education, "1", new { disabled = "disabled" }) Less than high school diploma<br>
+            @Html.RadioButtonFor(m => m.Q23_education, "2", new { disabled = "disabled" }) High School Diploma<br>
+            @Html.RadioButtonFor(m => m.Q23_education, "3", new { disabled = "disabled" }) Some college but no degree<br>
+            @Html.RadioButtonFor(m => m.Q23_education, "4", new { disabled = "disabled" }) Technical Degree<br>
+            @Html.RadioButtonFor(m => m.Q23_education, "5", new { disabled = "disabled" }) Associates Degree<br>
+            @Html.RadioButtonFor(m => m.Q23_education, "6", new { disabled = "disabled" }) Bachelors Degree or Above<br>
+        *@
         <br />
     </div>
-    </div>
+</div>
 
-    <div>
-    @using (Html.BeginForm()) {
+<div>
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
@@ -208,4 +211,4 @@
             @Html.ActionLink("Back to List", "Index")
         </div>
     }
-    </div>
+</div>
