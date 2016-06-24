@@ -31,6 +31,14 @@
                 <th scope="row">Email</th>
             </tr>
         </thead>
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+                @Html.ActionLink("Back to List", "Index")
+                </td>
+            </tr>
+        </tfoot>
         <tbody>
             <tr>
                 <td scope="row">@Html.DisplayFor(model => model.DOB)</td>
@@ -140,7 +148,4 @@
         </dl>
     </div>
 *@
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
