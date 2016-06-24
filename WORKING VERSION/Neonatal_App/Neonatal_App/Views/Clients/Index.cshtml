@@ -19,7 +19,6 @@
         <thead>
             <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Risk Score</th>
                 <th scope="col">Details</th>
                 <th scope="col">Make Changes</th>
             </tr>
@@ -38,8 +37,6 @@
                     @Html.DisplayFor(modelItem => item.last_name)
                 </th>
                 <td>
-                    Generated Risk Score
-                </td>
                 <td>
                     @Html.ActionLink("Click Here", "Details", new {id = item.id})
                 </td>

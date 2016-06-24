@@ -22,6 +22,7 @@
                 <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Details</th>
+                <th scope="col">Generate Risk Score</th>
                 <th scope="col">Make Changes</th>
                 </tr>
             </thead>
@@ -40,6 +41,9 @@
                 </th>
                 <td>
                     @Html.ActionLink("Click Here", "Details", new { id = item.id })
+                </td>
+                <td>
+                    @Html.ActionLink("Generate Risk Score", "RiskScore", new { id = item.id })
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.id })
