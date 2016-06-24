@@ -4,30 +4,52 @@
     ViewBag.Title = "Index";
 }
 
-<h5>Client List</h5>
-<table class="table">
-    <tr>
-        <th>
-          Name
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.first_name)
-            @Html.DisplayFor(modelItem => item.last_name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
-</table>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Information</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <table>
+        <caption>Client List</caption>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Details</th>
+                <th scope="col">Survey List</th>
+                <th scope="col">Make Changes</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="3">@Html.ActionLink("Create New", "Create")</td>
+            </tr>
+        </tfoot>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        @Html.DisplayFor(modelItem => item.first_name)
+                        @Html.DisplayFor(modelItem => item.last_name)
+                    </th>
+                    <th scope="row">
+                        @Html.ActionLink("Click Here", "Details", new { id = item.id })
+                    </th>
+                    <th scope="row">
+                        @Html.ActionLink("Survey List", "Index", "Surveys")
+                    </th>
+                    <th scope="row">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                    </th>
+                </tr>
+            </tbody>
+        }
+    </table>
+</body>
+</html>

@@ -1,15 +1,21 @@
 ﻿@model Neonatal_App.Models.Client
 
-
+@{
+    ViewBag.Title = "Create";
+}
+<!--stylesheets-->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 <link href="~/Content/custom.css" rel="stylesheet" />
 
 <h2>@ViewBag.Title.</h2>
+
+<!--begin modal-->
 <div class="modal fade" id="myModal" role="dialog">
     <section id="loginForm">
         <div class="modal-dialog">
+
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header" style="padding:35px 50px;">
@@ -17,83 +23,138 @@
                     <h4><i class="fa fa-child"></i> Register Client</h4>
                 </div>
                 <div class="modal-body" style="padding:40px 50px;">
-                    <form role="form">
-                        <div class="form-group">
-                            <label for="frstnm"><i class="fa fa-heartbeat"></i>  First Name</label>
-                            <input type="text" class="form-control" id="frstnm" placeholder="">
+
+                    <!--begin client registration form-->
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.first_name, "First Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.first_name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.first_name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.last_name, "Last Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.last_name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.last_name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.DOB, "Date of Birth", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.street_number, "Street Number", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.street_number, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.street_number, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.street_name, "Street Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.street_name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.street_name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.city, "City", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.city, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.zip_code, "Zip Code", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.zip_code, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.zip_code, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.county, "County", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.county, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.county, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <!--should be a dropdown list-->
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ward, "Ward", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.ward, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ward, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.phone, "Phone Number", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.phone, "not required", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.email, "not required", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.AspNetUsers_id, "Healthworker Username/Email", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("AspNetUsers_id", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.AspNetUsers_id, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <!--submit-->
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="" checked>Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block" style="background-color:#25b8dc"><span class="glyphicon glyphicon-off"></span> Add Patient</button>
                         </div>
-                        <div class="form-group">
-                            <label for="lstnm"><i class="fa fa-heartbeat"></i>  Last Name</label>
-                            <input type="text" class="form-control" id="lstnm" placeholder="">
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
                         </div>
-                        <div class="form-group">
-                            <label for="dob"><i class="fa fa-heartbeat"></i>  Date of Birth</label>
-                            <input type="text" class="form-control" id="dob" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="race"><i class="fa fa-heartbeat"></i>  Ethnicity</label>
-                            <input type="text" class="form-control" id="race" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="adrs"><i class="fa fa-heartbeat"></i>  Street Number</label>
-                            <input type="text" class="form-control" id="adrs" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="strtnm"><i class="fa fa-heartbeat"></i>  Street Name</label>
-                            <input type="text" class="form-control" id="strtnm" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="cty"><i class="fa fa-heartbeat"></i>  City</label>
-                            <input type="text" class="form-control" id="cty" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="zpcd"><i class="fa fa-heartbeat"></i>  Zip Code</label>
-                            <input type="text" class="form-control" id="zpcd" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="cnty"><i class="fa fa-heartbeat"></i>  County</label>
-                            <input type="text" class="form-control" id="cnty" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="wrd"><i class="fa fa-heartbeat"></i>  Ward</label>
-                            <input type="text" class="form-control" id="wrd" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="phnnmbr"><i class="fa fa-heartbeat"></i>  Phone Number</label>
-                            <input type="text" class="form-control" id="phnnmbr" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="eml"><i class="fa fa-heartbeat"></i>  Email</label>
-                            <input type="text" class="form-control" id="eml" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="hw"><i class="fa fa-heartbeat"></i>  Healthworker Username/Email</label>
-                            <input type="text" class="form-control" id="hw" placeholder="">
-                        </div>
-                        <div class="checkbox">
-                            <label><input type="checkbox" value="" checked>Remember me</label>
-                        </div>
-                        <button type="submit" class="btn btn-success btn-block" style="background-color:#25b8dc"><span class="glyphicon glyphicon-off"></span> Add Patient</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                    }
+                    <!--end form-->
                 </div>
             </div>
         </div>
     </section>
 </div>
 
-
+<!--scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.0/raphael-min.js"></script>
-<script>
-    $(document).ready(function () {
-        //$("#myBtn").click(function () {
-            $("#myModal").modal();
-       // });
-    });
 
+<!--begin jquery-->
+<script>
+$(document).ready(function () {
+    //$("#myBtn").click(function () {
+         $("#myModal").modal();
+    // });
+    });
 </script>

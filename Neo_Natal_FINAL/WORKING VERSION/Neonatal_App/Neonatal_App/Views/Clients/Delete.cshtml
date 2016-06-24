@@ -35,14 +35,6 @@
         </dd>
 
         <dt>
-            Ethnicity
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ethnicity)
-        </dd>
-
-        <dt>
             Address
         </dt>
 
@@ -84,7 +76,7 @@
         </dd>
 
         <dt>
-           Phone Number
+            Phone Number
         </dt>
 
         <dd>
@@ -100,7 +92,8 @@
         </dd>
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
