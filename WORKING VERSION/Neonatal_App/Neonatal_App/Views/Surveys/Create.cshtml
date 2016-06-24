@@ -9,24 +9,27 @@
 
     <h4>Create New Survey</h4>
     <hr />
-
+    <h5><b>Please choose a client from the dropdown below.</b></h5>
     <div class="form-group">
         @Html.AntiForgeryToken()
-        @Html.LabelFor(model => model.client_id, "client_id", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownList("client_id", null, htmlAttributes: new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.client_id, "", new { @class = "text-danger" })
         </div>
     </div>
-
-    <h5>1. Please enter the mother's race.</h5>
+    <br />
+    <br />
+    ----------------------------------------------------------------------------------------------
+    <!--begin questions-->
+    <h5><b>1. Please enter the mother's race.</b></h5>
     @Html.RadioButtonFor(m => m.Q1_race, "1") Non-Hispanic African American<br>
     @Html.RadioButtonFor(m => m.Q1_race, "2") Non-Hispanic White<br>
     @Html.RadioButtonFor(m => m.Q1_race, "3") Non-Hispanic Asian<br>
     @Html.RadioButtonFor(m => m.Q1_race, "4") Hispanic/Latino<br>
     @Html.RadioButtonFor(m => m.Q1_race, "5") Non-Hispanic Other<br>
+    <br />
 
-    <h5>2. Please enter the mother's ward.</h5>
+    <h5><b>2. Please enter the mother's ward.</b></h5>
     @Html.RadioButtonFor(m => m.Q2_ward, "1") Ward 1<br>
     @Html.RadioButtonFor(m => m.Q2_ward, "2") Ward 2<br>
     @Html.RadioButtonFor(m => m.Q2_ward, "3") Ward 3<br>
@@ -66,15 +69,17 @@
         })*@
     <br />
 
-    <h5>3. Is this your first child?</h5>
+    <h5><b>3. Is this your first child?</b></h5>
     @Html.RadioButtonFor(m => m.Q3_first_child, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q3_first_child, "2") No<br>
     @Html.RadioButtonFor(m => m.Q3_first_child, "3") Prefer not to comment/Unsure<br>
+    <br />
 
-    <h5>4. Was your previous child(ren) delivered prematurely?</h5>
+    <h5><b>4. Was your previous child(ren) delivered prematurely?</b></h5>
     @Html.RadioButtonFor(m => m.Q4_prem_birth, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q4_prem_birth, "2") No<br>
     @Html.RadioButtonFor(m => m.Q4_prem_birth, "3") Prefer not to comment/Unsure<br>
+    <br />
 
    @* <h5>5. What week of your pregnancy did you visit a prenatal healthcare professional?</h5>
     @Html.RadioButtonFor(m => m.Q5_obgyn, "1") 0-13 weeks (First Trimester)<br>
@@ -110,10 +115,11 @@
     @Html.RadioButtonFor(m => m.Q9_fam_smoker, "3") Prefer not to comment/Unsure<br>
 *@
 
-    <h5>5. Have you drank alcohol in the last month?</h5>
+    <h5><b>5. Have you drank alcohol in the last month?</b></h5>
     @Html.RadioButtonFor(m => m.Q10_alcohol, "1") Yes<br>
     @Html.RadioButtonFor(m => m.Q10_alcohol, "2") No<br>
     @Html.RadioButtonFor(m => m.Q10_alcohol, "3") Prefer not to comment/Unsure<br>
+    <br />
 
     @*h5>11. Does anyone in your family/household drink alcohol on a weekly basis?</h5>
     @Html.RadioButtonFor(m => m.Q11_fam_alcohol, "1") Yes<br>
@@ -196,7 +202,7 @@
     @Html.RadioButtonFor(m => m.Q23_education, "5") Associates Degree<br>
     @Html.RadioButtonFor(m => m.Q23_education, "6") Bachelors Degree or Above<br>
     *@
-
+    <br />
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Create" class="btn btn-default" />
