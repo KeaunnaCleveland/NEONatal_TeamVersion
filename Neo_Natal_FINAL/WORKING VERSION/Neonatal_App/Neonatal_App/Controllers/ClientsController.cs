@@ -48,7 +48,7 @@ namespace Neonatal_App.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,first_name,last_name,DOB,ethnicity,street_number,street_name,city,zip_code,county,ward,phone,email,AspNetUsers_id")] Client client)
+        public ActionResult Create([Bind(Include = "id,first_name,last_name,DOB,street_number,street_name,city,zip_code,county,ward,phone,email,AspNetUsers_id")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace Neonatal_App.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,first_name,last_name,DOB,ethnicity,street_number,street_name,city,zip_code,county,ward,phone,email,AspNetUsers_id")] Client client)
+        public ActionResult Edit([Bind(Include = "id,first_name,last_name,DOB,street_number,street_name,city,zip_code,county,ward,phone,email,AspNetUsers_id")] Client client)
         {
             if (ModelState.IsValid)
             {
