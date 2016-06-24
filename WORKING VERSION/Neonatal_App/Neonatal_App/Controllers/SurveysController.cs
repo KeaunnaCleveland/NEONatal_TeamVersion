@@ -15,13 +15,13 @@ namespace Neonatal_App.Controllers
         private Neonatal_App_DB db = new Neonatal_App_DB();
 
         // GET: Surveys
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             var surveys = db.Surveys.Include(s => s.Client);
             /*var selectWard = from m in db.Surveys
                             where m.Q2_ward > 0
                             select m;*/
-            return View(surveys.ToList());
+            return View(surveys);
         }
 
         //GET Surveys/RiskScore/5
