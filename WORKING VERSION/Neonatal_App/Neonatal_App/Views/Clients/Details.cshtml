@@ -15,11 +15,12 @@
 </head>
 <body>
     <table>
-        <caption>Client Information</caption>
+        <caption>
+        @Html.DisplayFor(m => m.first_name)
+        @Html.DisplayFor(m => m.last_name)
+        </caption>
         <thead>
             <tr>
-                <th scope="row">Healthworker Username/Password</th>
-                <th scope="row">Name</th>
                 <th scope="row">DOB</th>
                 <th scope="row">Address</th>
                 <th scope="row">City</th>
@@ -32,11 +33,6 @@
         </thead>
         <tbody>
             <tr>
-                <td scope="row">@Html.DisplayFor(model => model.AspNetUser.Email)</td>
-                <td scope="row">
-                @Html.DisplayFor(model => model.first_name)
-                @Html.DisplayFor(model => model.last_name)
-                </td>
                 <td scope="row">@Html.DisplayFor(model => model.DOB)</td>
                 <td scope="row">
                 @Html.DisplayFor(model => model.street_number)
