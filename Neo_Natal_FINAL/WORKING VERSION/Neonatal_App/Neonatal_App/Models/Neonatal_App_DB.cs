@@ -60,10 +60,6 @@ namespace Neonatal_App.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Client>()
-                .Property(e => e.zip_code)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Client>()
                 .Property(e => e.county)
                 .IsUnicode(false);
 
