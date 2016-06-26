@@ -1,18 +1,42 @@
-﻿body{
-    background-color:#F8FAFE;
+﻿body {
+    background-color: #F8FAFE;
     height: 0 auto;
-}  
-.modal-header, h4, .close {
-      background-color: cyan;
-      color:white;
-      text-align: center;
-      font-size: 30px;
-  }
-  .modal-footer {
-      background-color: #f9f9f9;
-  }
+}
 
-  #myBtn2{
-    background-color:#fb0d58;
+.modal-header, h4, .close {
+    background-color: cyan;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.modal-footer {
+    background-color: #f9f9f9;
+}
+
+#myBtn2 {
+    background-color: #fb0d58;
     border-color: #fb0d58;
-  }
+}
+
+.navbar-fixed-top {
+    margin-left: 33%;
+    opacity: .7;
+}
+
+#logo{
+    position: fixed;
+}
+
+.neonatal{
+    margin-left:50%
+}
+
+.btn-default{
+    transition: background 1s ease,
+        padding 0.8s linear;
+}
+.btn-default:hover{
+    background: pink;
+    /*padding:10px;*/
+}
