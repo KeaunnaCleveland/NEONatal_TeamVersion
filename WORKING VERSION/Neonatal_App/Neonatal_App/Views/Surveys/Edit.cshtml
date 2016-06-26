@@ -19,7 +19,6 @@
         <!--choose client by id-->
         <h5><b>Please choose a client from the dropdown below.</b></h5>
         <div class="form-group">
-            @Html.AntiForgeryToken()
             <div class="col-md-10">
                 @Html.DropDownList("client_id", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.client_id, "", new { @class = "text-danger" })

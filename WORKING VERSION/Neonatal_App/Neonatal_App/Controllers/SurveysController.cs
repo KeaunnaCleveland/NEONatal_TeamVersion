@@ -98,7 +98,7 @@ namespace Neonatal_App.Controllers
                     }
                     else if (ward == 2)
                     {
-                        risk_Score += 17; ;
+                        risk_Score += 17; 
                     }
                     else if (ward == 3)
                     {
@@ -198,7 +198,7 @@ namespace Neonatal_App.Controllers
                     }
 
                     //calculate risk score
-                    survey.risk_score += risk_Score;
+                    survey.risk_score = risk_Score;
 
                     db.Surveys.Add(survey);
                     db.SaveChanges();
@@ -359,7 +359,7 @@ namespace Neonatal_App.Controllers
                     }
 
                     //calculate risk score total
-                    survey.risk_score += risk_Score;
+                    survey.risk_score = risk_Score;
                     db.Entry(survey).State = EntityState.Modified;
                     db.SaveChanges();
                     return RedirectToAction("Index");
