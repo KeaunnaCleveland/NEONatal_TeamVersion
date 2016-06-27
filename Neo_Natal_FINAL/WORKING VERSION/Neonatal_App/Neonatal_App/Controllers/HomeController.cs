@@ -26,5 +26,12 @@ namespace Neonatal_App.Controllers
 
             return View();
         }
+
+        public ActionResult Admin()
+        {
+            ViewBag.Message = "Your Administrator page.";
+
+            return PartialView();
+        }
     }
 }

@@ -270,6 +270,13 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Content\main.css" />
     <Content Include="Content\clevelandcodes.png" />
+    <Content Include="Scripts\metismenu.min.js" />
+    <Content Include="Content\mettismenu.css" />
+    <Content Include="Scripts\morris-data.js" />
+    <Content Include="Scripts\sbadmin.js" />
+    <Content Include="Content\sbadmin2.css" />
+    <Content Include="Content\timeline.css" />
+    <Content Include="Views\Home\index.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -316,6 +323,11 @@
     <Content Include="Views\Surveys\Details.cshtml" />
     <Content Include="Views\Surveys\Edit.cshtml" />
     <Content Include="Views\Surveys\Index.cshtml" />
+    <Content Include="Views\Home\bower.json" />
+    <Content Include="Views\Home\LICENSE" />
+    <Content Include="Views\Home\README.md" />
+    <Content Include="Views\Account\Admin.cshtml" />
+    <Content Include="Views\Home\Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
