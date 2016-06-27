@@ -77,7 +77,7 @@ namespace Neonatal_App.Controllers
                 // ENTER RISK SCORE CODE HERE!!!
 
                 //QUESTION 1 - RACE
-                int risk_Score = 0;
+                double risk_Score = 0;
 
                 int race = Convert.ToInt32(survey.Q1_race);
 
@@ -238,7 +238,7 @@ namespace Neonatal_App.Controllers
                 // ENTER RISK SCORE CODE HERE!!!
 
                 //QUESTION 1 - RACE
-                int risk_Score = 0;
+                double risk_Score = 0;
 
                 int race = Convert.ToInt32(survey.Q1_race);
 
@@ -259,7 +259,7 @@ namespace Neonatal_App.Controllers
                     }
                     else if (ward == 2)
                     {
-                        risk_Score += 17; ;
+                        risk_Score += 17;
                     }
                     else if (ward == 3)
                     {
@@ -358,8 +358,10 @@ namespace Neonatal_App.Controllers
                         risk_Score += 0;
                     }
 
-                    //calculate risk score total
+                    //calculate risk score
                     survey.risk_score = risk_Score;
+
+                    //post & save survey
                     db.Entry(survey).State = EntityState.Modified;
                     db.SaveChanges();
                     return RedirectToAction("Index");
