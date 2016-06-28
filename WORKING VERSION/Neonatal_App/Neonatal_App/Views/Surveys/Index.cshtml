@@ -26,12 +26,6 @@
                 <th scope="col">Make Changes</th>
                 </tr>
             </thead>
-            <tfoot>
-                <tr>
-                <td colspan="3">@Html.ActionLink("Create New", "Create")</td>
-                <td colspan="3">@Html.ActionLink("Go Back", "Index", "Clients")</td>
-                </tr>
-            </tfoot>
             @foreach (var item in Model)
             {
             <tbody>
@@ -56,5 +50,22 @@
             }
         </table>
         <!--end table-->
+
+        <div class="container">
+            @using (Html.BeginForm("Index", "Surveys", FormMethod.Get))
+            {
+                <p>
+                    Name: @Html.TextBox("SearchString") <br />
+                    <br />
+                    <input type="submit" value="Filter" />
+                </p>
+            } 
+        </div>
+        <br />
+        <div class="navigate">
+            @Html.ActionLink("Create New", "Create") |
+            @Html.ActionLink("Go Back", "Index", "Surveys") |
+            @Html.ActionLink("Clients", "Index", "Clients") |
+        </div>
     </body>
 </html>

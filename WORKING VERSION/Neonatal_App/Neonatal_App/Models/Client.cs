@@ -17,6 +17,10 @@ namespace Neonatal_App.Models
 
         public int id { get; set; }
 
+        [Required(ErrorMessage = "Pin Required")]
+        [Range(1000, 9999, ErrorMessage = "Pin must be 4 digits long")]
+        public int? pin { get; set; }
+
         [Required(ErrorMessage = "first name is required")]
         [StringLength(50)]
         public string first_name { get; set; }
@@ -40,7 +44,7 @@ namespace Neonatal_App.Models
         [StringLength(50)]
         public string city { get; set; }
 
-        [Required(ErrorMessage = "zip code name is required")]
+        [Required(ErrorMessage = "zip code is required")]
         public int zip_code { get; set; }
 
         [Required(ErrorMessage = "county is required")]
