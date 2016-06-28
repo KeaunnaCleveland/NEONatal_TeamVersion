@@ -36,8 +36,8 @@
                 @*EMAIL*@
                 <form role="form">
                     <div class="form-group">
-                        <label for="email"><span class="glyphicon glyphicon-plus-sign"></span>Email</label>
-                        <input type="text" name="form-email" placeholder="Email" class="form-email form-control" id="form-email">
+                        <label for="email"><span class="glyphicon glyphicon-plus-sign"></span> Email</label>
+                        <input type="text" name="form-email" placeholder="" class="form-email form-control" id="form-email">
                     </div>
 
                     @*<div class="form-group">
@@ -47,14 +47,14 @@
                     @*Password*@
                     <div class="form-group">
                         <label for="psw"><span class="glyphicon glyphicon-heart"></span> Password</label>
-                        <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                        <input type="text" class="form-control" id="psw" placeholder="">
                         @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                     </div>
 
                     @*ConfirmPassword*@
                     <div class="form-group">
-                        <label for="psw"><span class="glyphicon glyphicon-heart"></span>Confirm Password</label>
-                        <input type="text" class="form-control" id="psw" placeholder="Confirm password">
+                        <label for="psw"><span class="glyphicon glyphicon-heart-empty"></span> Confirm Password</label>
+                        <input type="text" class="form-control" id="psw" placeholder="">
                         @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                     </div>
                     <div class="col-md-10">

@@ -58,7 +58,7 @@ namespace Neonatal_App.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            return PartialView();
         }
 
         //
@@ -79,7 +79,7 @@ namespace Neonatal_App.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Admin", "Home");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -124,7 +124,7 @@ namespace Neonatal_App.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(model.ReturnUrl);
+                    return RedirectToAction("Admin", "Home");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.Failure:
