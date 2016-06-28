@@ -40,7 +40,7 @@ namespace Neonatal_App.Controllers
         public ActionResult Create()
         {
             ViewBag.AspNetUsers_id = new SelectList(db.AspNetUsers, "Id", "Email");
-            return View();
+            return PartialView();
         }
 
         // POST: Clients/Create
