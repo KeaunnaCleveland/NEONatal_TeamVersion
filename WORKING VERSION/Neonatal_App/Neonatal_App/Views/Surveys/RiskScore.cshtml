@@ -12,6 +12,20 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        .caption {
+            text-align: center;
+        }
+
+        a.link, 
+        a.link:active, 
+        a.link:link, 
+        a.link:visited { 
+            color: #fff; 
+        }
+        
+    </style>
 </head>
 <body>
 
@@ -19,7 +33,7 @@
     </div>
     <!--begin table-->
     <table>
-        <caption>Risk Score for this survey</caption>
+        <caption class="caption">Risk Score for this survey</caption>
         <thead>
             <tr>
                 <th scope="col">Name</th>
@@ -46,7 +60,7 @@
     <!--end table-->
     <!--risk score definitions-->
     <table>
-        <caption>Definitions</caption>
+        <caption class="caption">Definitions</caption>
         <thead>
             <tr>
                 <th scope="col">Low Risk</th>
@@ -69,8 +83,12 @@
         </tbody>
     </table>
     <div class="resources">
-
-
+    </div>
+    <!--begin navigation-->
+    <div class="navigate">
+        @Html.ActionLink("Go Back", "Index", "Surveys", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Admin Page", "Admin", "Home", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Client List", "Index", "Clients", null, new { @class = "btn btn-default" })
     </div>
 
     <script>

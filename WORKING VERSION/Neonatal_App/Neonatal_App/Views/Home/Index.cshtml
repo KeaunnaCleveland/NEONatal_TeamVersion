@@ -2,7 +2,41 @@
     ViewBag.Title = "Home Page";
 }
 
-<!DOCTYPE html>
+@{
+    ViewBag.Title = "Home Page";
+}
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+<link href="~/Content/animate.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/main.css" rel="stylesheet" />
+<link href="~/Content/custom.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row">
+        <div id="bg">
+            <img src="~/Content/cleveland-skyline-black-silhouette.svg" />
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="neonatal" @*style="margin-left:50%"*@>
+                <img src="~/Content/neonatal.svg" class="neonatallogo" id="logo" />
+            </div>
+            <div class="navbar-fixed-top">
+                <a href="/Account/Login" button type="button" class="btn btn-default" id="myBtn">Login</a>
+                <a href="/Account/Register" button type="button" class="btn btn-default" id="myBtn1">Register</a>
+                <img src="~/Content/wagon-988818_640.jpg" style="height:15%;width:15%;opacity:1" />
+                <a href="" button type="button" class="btn btn-default" id="myBtn1">About Us</a>
+                <a href="" button type="button" class="btn btn-default" id="myBtn1">Cleveland Codes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@**<!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">

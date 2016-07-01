@@ -15,13 +15,17 @@ namespace Neonatal_App.Controllers
         private Neonatal_App_DB db = new Neonatal_App_DB();
 
         // GET: Clients
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             var clients = db.Clients.Include(c => c.AspNetUser);
             clients = from m in db.Clients
                       orderby m.last_name, m.first_name
                       select m;
-            return View(clients.ToList());
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                clients = clients.Where(s => s.first_name.Contains(searchString));
+            }
+            return View(clients);
         }
 
         // GET: Clients/Details/5

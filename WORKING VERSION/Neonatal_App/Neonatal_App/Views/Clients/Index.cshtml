@@ -12,23 +12,48 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        .caption {
+            text-align: center;
+        }
+
+        a.link, 
+        a.link:active, 
+        a.link:link, 
+        a.link:visited { 
+            color: #fff; 
+        }
+
+    </style>
 </head>
 <body>
+    <br />
+    <!--begin filter-->
+    <div class="filter-container">
+        @using (Html.BeginForm("Index", "Clients", FormMethod.Get))
+            {
+            <p>
+                Search by first name: @Html.TextBox("SearchString") <br />
+                <br />
+                <button id="button" type="submit" value="Filter" class="btn btn-success">Filter</button>
+        <button class="btn btn-success">@Html.ActionLink("Create New", "Create", null, new { @class = "link" })</button>
+            </p>
+        }
+    </div>
+    <div>
+    </div>
+    <br />
+    <!--begin table-->
     <table>
-        <caption>Client List</caption>
+        <caption class="caption">Client List</caption>
         <thead>
             <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Details</th>
-                <th scope="col">Survey List</th>
                 <th scope="col">Make Changes</th>
             </tr>
         </thead>
-        <tfoot>
-            <tr>
-                <td colspan="3">@Html.ActionLink("Create New", "Create")</td>
-            </tr>
-        </tfoot>
         @foreach (var item in Model)
         { 
         <tbody>
@@ -41,9 +66,6 @@
                     @Html.ActionLink("Click Here", "Details", new {id = item.id})
                 </th>
                 <th scope="row">
-                    @Html.ActionLink("Survey List", "Index", "Surveys")
-                </th>
-                <th scope="row">
                     @Html.ActionLink("Edit", "Edit", new { id = item.id })
                     @Html.ActionLink("Delete", "Delete", new { id = item.id })
                 </th>
@@ -51,5 +73,10 @@
         </tbody>
     }
  </table>
+<!--bottom nav-->
+    <div class="navigate">
+        @Html.ActionLink("Full List", "Index", "Clients", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Admin Page", "Admin", "Home", null, new { @class = "btn btn-default" })
+    </div>
 </body>
 </html>

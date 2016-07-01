@@ -50,14 +50,6 @@
                             </div>
 
                             <div class="form-group">
-                                @Html.LabelFor(model => model.pin, "Pin", htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.pin, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.pin, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div class="form-group">
                                 @Html.LabelFor(model => model.DOB, "Date of Birth", htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
                                     @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control" } })
@@ -131,7 +123,7 @@
                             </div>
 
                             <div class="form-group">
-                                @Html.LabelFor(model => model.AspNetUsers_id, "Healthworker Username/Email", htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.LabelFor(model => model.AspNetUsers_id, "HW Username", htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
                                     @Html.DropDownList("AspNetUsers_id", null, htmlAttributes: new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.AspNetUsers_id, "", new { @class = "text-danger" })
@@ -141,7 +133,7 @@
                             <div class="checkbox">
                                 <label><input type="checkbox" value="" checked>Remember me</label>
                             </div>
-                            <button type="submit" class="btn btn-success btn-block" style="background-color:#25b8dc"><span class="glyphicon glyphicon-off"></span> Add Patient</button>
+                            <button type="submit" class="btn btn-success btn-block" style="background-color:#25b8dc"><span class="glyphicon glyphicon-off"></span> Add Client</button>
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>

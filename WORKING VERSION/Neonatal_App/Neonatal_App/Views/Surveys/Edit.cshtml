@@ -12,9 +12,6 @@
     
     <div class="form-horizontal">
         <hr />
-        <!--hidden id field-->
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.id)
 
         <!--choose client by id-->
         <h5><b>Please choose a client from the dropdown below.</b></h5>
