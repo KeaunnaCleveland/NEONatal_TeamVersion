@@ -13,7 +13,7 @@ namespace Neonatal_App.Models
 
         public int client_id { get; set; }
 
-        public int? risk_score { get; set; }
+        public double risk_score { get; set; }
 
         public int? Q1_race { get; set; }
 

@@ -17,39 +17,37 @@ namespace Neonatal_App.Models
 
         public int id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "first name is required")]
         [StringLength(50)]
         public string first_name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "last name is required")]
         [StringLength(50)]
         public string last_name { get; set; }
 
+        [Required(ErrorMessage = "date of birth is required")]
         [Column(TypeName = "date")]
         public DateTime DOB { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string ethnicity { get; set; }
-
+        [Required(ErrorMessage = "street number is required")]
         public int street_number { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "street name is required")]
         [StringLength(50)]
         public string street_name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "city is required")]
         [StringLength(50)]
         public string city { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string zip_code { get; set; }
+        [Required(ErrorMessage = "zip code is required")]
+        public int zip_code { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "county is required")]
         [StringLength(50)]
         public string county { get; set; }
 
+        [Required(ErrorMessage = "ward number is required")]
         public int ward { get; set; }
 
         public long? phone { get; set; }

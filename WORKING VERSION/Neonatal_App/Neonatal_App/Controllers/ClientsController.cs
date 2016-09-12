@@ -15,10 +15,17 @@ namespace Neonatal_App.Controllers
         private Neonatal_App_DB db = new Neonatal_App_DB();
 
         // GET: Clients
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             var clients = db.Clients.Include(c => c.AspNetUser);
-            return View(clients.ToList());
+            clients = from m in db.Clients
+                      orderby m.last_name, m.first_name
+                      select m;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                clients = clients.Where(s => s.first_name.Contains(searchString));
+            }
+            return View(clients);
         }
 
         // GET: Clients/Details/5
@@ -40,7 +47,7 @@ namespace Neonatal_App.Controllers
         public ActionResult Create()
         {
             ViewBag.AspNetUsers_id = new SelectList(db.AspNetUsers, "Id", "Email");
-            return View();
+            return PartialView();
         }
 
         // POST: Clients/Create
@@ -48,7 +55,7 @@ namespace Neonatal_App.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,first_name,last_name,DOB,ethnicity,street_number,street_name,city,zip_code,county,ward,phone,email,AspNetUsers_id")] Client client)
+        public ActionResult Create([Bind(Include = "id,pin,first_name,last_name,DOB,ethnicity,street_number,street_name,city,zip_code,county,ward,phone,email,AspNetUsers_id")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +65,7 @@ namespace Neonatal_App.Controllers
             }
 
             ViewBag.AspNetUsers_id = new SelectList(db.AspNetUsers, "Id", "Email", client.AspNetUsers_id);
-            return View(client);
+            return PartialView(client);
         }
 
         // GET: Clients/Edit/5
@@ -74,7 +81,7 @@ namespace Neonatal_App.Controllers
                 return HttpNotFound();
             }
             ViewBag.AspNetUsers_id = new SelectList(db.AspNetUsers, "Id", "Email", client.AspNetUsers_id);
-            return View(client);
+            return PartialView(client);
         }
 
         // POST: Clients/Edit/5
@@ -91,7 +98,7 @@ namespace Neonatal_App.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.AspNetUsers_id = new SelectList(db.AspNetUsers, "Id", "Email", client.AspNetUsers_id);
-            return View(client);
+            return PartialView(client);
         }
 
         // GET: Clients/Delete/5

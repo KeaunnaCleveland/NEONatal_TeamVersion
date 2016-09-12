@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44353</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -193,29 +193,58 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cleveland-skyline-black-silhouette.svg" />
+    <Content Include="Content\clevelandcodes.png" />
+    <Content Include="Content\custom.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\mettismenu.css" />
+    <Content Include="Content\neonatal.svg" />
+    <Content Include="Content\sbadmin2.css" />
+    <Content Include="Content\wagon-988818_640.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\jquery-2.2.4.min.map" />
     <None Include="Scripts\jquery-3.0.0.intellisense.js" />
+    <None Include="Scripts\jquery-2.2.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.2.4.js" />
+    <Content Include="Scripts\jquery-2.2.4.min.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\metismenu.js" />
+    <Content Include="Scripts\morris-data.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\sbadmin.js" />
+    <Content Include="Scripts\wow.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -259,9 +288,15 @@
     <Content Include="Views\Surveys\Details.cshtml" />
     <Content Include="Views\Surveys\Edit.cshtml" />
     <Content Include="Views\Surveys\Index.cshtml" />
+    <Content Include="Views\Surveys\RiskScore.cshtml" />
+    <Content Include="Views\Surveys\SurveyTest.cshtml" />
+    <Content Include="Views\Account\Admin.cshtml" />
+    <Content Include="Views\Home\Admin.cshtml" />
+    <Content Include="Views\Home\bower.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\themes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -290,7 +325,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59201</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59201/</IISUrl>
+          <IISUrl>https://localhost:44353/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

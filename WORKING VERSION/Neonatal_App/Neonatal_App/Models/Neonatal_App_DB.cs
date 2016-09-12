@@ -52,19 +52,11 @@ namespace Neonatal_App.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Client>()
-                .Property(e => e.ethnicity)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Client>()
                 .Property(e => e.street_name)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Client>()
                 .Property(e => e.city)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Client>()
-                .Property(e => e.zip_code)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Client>()

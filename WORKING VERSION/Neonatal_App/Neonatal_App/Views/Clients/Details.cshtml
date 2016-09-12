@@ -4,104 +4,148 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Information</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <table>
+        <caption>
+        @Html.DisplayFor(m => m.first_name)
+        @Html.DisplayFor(m => m.last_name)
+        </caption>
+        <thead>
+            <tr>
+                <th scope="row">DOB</th>
+                <th scope="row">Address</th>
+                <th scope="row">City</th>
+                <th scope="row">Zip Code</th>
+                <th scope="row">County</th>
+                <th scope="row">Ward</th>
+                <th scope="row">Phone</th>
+                <th scope="row">Email</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+                @Html.ActionLink("Back to List", "Index")
+                </td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td scope="row">@Html.DisplayFor(model => model.DOB)</td>
+                <td scope="row">
+                @Html.DisplayFor(model => model.street_number)
+                @Html.DisplayFor(model => model.street_name)
+                </td>
+                <td scope="row">@Html.DisplayFor(model => model.city)</td>
+                <td scope="row">@Html.DisplayFor(model => model.zip_code)</td>
+                <td scope="row">@Html.DisplayFor(model => model.county)</td>
+                <td scope="row">@Html.DisplayFor(model => model.ward)</td>
+                <td scope="row">@Html.DisplayFor(model => model.phone)</td>
+                <td scope="row">@Html.DisplayFor(model => model.email)</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
 
-<div>
-    <h4>Client</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Healthworker Username/Email
-        </dt>
+@*<h2>Details</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.AspNetUser.Email)
-        </dd>
+    <div>
+        <h4>Client</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Healthworker Username/Email
+            </dt>
 
-        <dt>
-            Name
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AspNetUser.Email)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.first_name)
-            @Html.DisplayFor(model => model.last_name)
-        </dd>
+            <dt>
+                Name
+            </dt>
 
-        <dt>
-            Date of Birth
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.first_name)
+                @Html.DisplayFor(model => model.last_name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DOB)
-        </dd>
+            <dt>
+                Date of Birth
+            </dt>
 
-        <dt>
-            Ethnicity
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DOB)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ethnicity)
-        </dd>
+            <dt>
+                Address
+            </dt>
 
-        <dt>
-            Address
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.street_number)
+                @Html.DisplayFor(model => model.street_name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.street_number)
-            @Html.DisplayFor(model => model.street_name)
-        </dd>
+            <dt>
+                City
+            </dt>
 
-        <dt>
-            City
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.city)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.city)
-        </dd>
+            <dt>
+                Zip Code
+            </dt>
 
-        <dt>
-            Zip Code
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.zip_code)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.zip_code)
-        </dd>
+            <dt>
+                County
+            </dt>
 
-        <dt>
-            County
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.county)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.county)
-        </dd>
+            <dt>
+                Ward
+            </dt>
 
-        <dt>
-            Ward
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ward)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ward)
-        </dd>
+            <dt>
+                Phone Number
+            </dt>
 
-        <dt>
-            Phone Number
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.phone)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.phone)
-        </dd>
+            <dt>
+                Email
+            </dt>
 
-        <dt>
-            Email
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+        </dl>
+    </div>
+*@
 
-        <dd>
-            @Html.DisplayFor(model => model.email)
-        </dd>
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

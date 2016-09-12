@@ -5,50 +5,82 @@
 }
 
 <html>
-    <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Information</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
-    </head>
 
-    <body>
-        <!--begin table-->
-        <table>
-        <caption>Survey List</caption>
-            <thead>
-                <tr>
+    <style>
+        .caption {
+            text-align: center;
+        }
+
+         a.link, 
+         a.link:active, 
+         a.link:link, 
+         a.link:visited { 
+            color: #fff; 
+        }
+    </style>
+
+</head>
+<body>
+    <br />
+    <!--begin filter-->
+    <div class="container">
+
+        @using (Html.BeginForm("Index", "Surveys", FormMethod.Get))
+            {
+            <p>
+                Search by first name: @Html.TextBox("SearchString") <br />
+                <br />
+                <button id="button" type="submit" value="Filter" class="btn btn-success">Search</button>
+                <button class="btn btn-success">@Html.ActionLink("Create New", "Create", null, new { @class = "link" })</button>
+            </p>
+        }
+    </div>
+    <!--begin table-->
+    <table>
+        <caption class="caption">Survey List</caption>
+        <thead>
+            <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Details</th>
+                <th scope="col">Generate Risk Score</th>
                 <th scope="col">Make Changes</th>
-                </tr>
-            </thead>
-            <tfoot>
-                <tr>
-                <td colspan="3">@Html.ActionLink("Create New", "Create")</td>
-                </tr>
-            </tfoot>
-            @foreach (var item in Model)
+            </tr>
+        </thead>
+        @foreach (var item in Model)
             {
             <tbody>
                 <tr>
-                <th scope="row">
-                    @Html.DisplayFor(modelItem => item.Client.first_name)
-                    @Html.DisplayFor(modelItem => item.Client.last_name)
-                </th>
-                <td>
-                    @Html.ActionLink("Click Here", "Details", new { id = item.id })
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id })
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
-                </td>
+                    <th scope="row">
+                        @Html.DisplayFor(modelItem => item.Client.first_name)
+                        @Html.DisplayFor(modelItem => item.Client.last_name)
+                    </th>
+                    <td>
+                        @Html.ActionLink("Click Here", "Details", new { id = item.id })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Generate Risk Score", "RiskScore", new { id = item.id })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id })
+                        |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                    </td>
                 </tr>
             </tbody>
-            }
-        </table>
-        <!--end table-->
-    </body>
+        }
+    </table>
+    <!--end table-->
+    <br />
+
+    <div class="navigate">
+        @Html.ActionLink("Full List", "Index", "Surveys", null, new { @class = "btn btn-default" })
+    </div>
+</body>
 </html>

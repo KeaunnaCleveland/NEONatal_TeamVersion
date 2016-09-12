@@ -1,0 +1,103 @@
+﻿@model Neonatal_App.Models.Survey
+
+@{
+    ViewBag.Title = "RiskScore";
+}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Information</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        .caption {
+            text-align: center;
+        }
+
+        a.link, 
+        a.link:active, 
+        a.link:link, 
+        a.link:visited { 
+            color: #fff; 
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="risk-score-container">
+    </div>
+    <!--begin table-->
+    <table>
+        <caption class="caption">Risk Score for this survey</caption>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Risk Score</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="3">@Html.ActionLink("Go Back", "Index", "Surveys")</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <th scope="row">
+                    @Html.DisplayFor(modelItem => modelItem.Client.first_name)
+                    @Html.DisplayFor(modelItem => modelItem.Client.last_name)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem.risk_score)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--end table-->
+    <!--risk score definitions-->
+    <table>
+        <caption class="caption">Definitions</caption>
+        <thead>
+            <tr>
+                <th scope="col">Low Risk</th>
+                <th scope="col">Moderate Risk</th>
+                <th scope="col">High Risk</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">
+                    < 50
+                </th>
+                <td>
+                    50 - 70
+                </td>
+                <td>
+                   > 70
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="resources">
+    </div>
+    <!--begin navigation-->
+    <div class="navigate">
+        @Html.ActionLink("Go Back", "Index", "Surveys", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Admin Page", "Admin", "Home", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Client List", "Index", "Clients", null, new { @class = "btn btn-default" })
+    </div>
+
+    <script>
+        $(function () { //begin ready
+
+        })//end ready
+    </script>
+</body>
+</html>
+
+
+
