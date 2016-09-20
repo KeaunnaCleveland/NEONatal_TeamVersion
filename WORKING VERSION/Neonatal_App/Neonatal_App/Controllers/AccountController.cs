@@ -79,7 +79,7 @@ namespace Neonatal_App.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToAction("Admin", "Home");
+                    return RedirectToAction("Index", "Clients");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -170,7 +170,7 @@ namespace Neonatal_App.Controllers
                        "Confirm your account", "Please confirm your account by clicking <a href=\""
                        + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Admin", "Home");
+                    return RedirectToAction("Index", "Clients");
                 }
                 AddErrors(result);
             }

@@ -3,7 +3,7 @@
     ViewBag.Title = "Register";
 }
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 <link href="~/Content/custom.css" rel="stylesheet" />
@@ -16,6 +16,7 @@
         text-align: center;
         font-size: 30px;
     }
+ 
 </style>
 
 <!--begin registration-->
@@ -28,12 +29,9 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4><b>Register For Access</b> <span class="glyphicon glyphicon-pencil"></span> </h4>
             </div>
+            <div style="padding-right: 20px;">
                 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
-                    <!--<div class="form-group">
-        <label for="email"><span class="glyphicon glyphicon-plus-sign"></span> Email</label>
-        <input type="text" name="form-email" placeholder="" class="form-email form-control" id="form-email">
-    </div>-->
                     @Html.ValidationSummary("", new { @class = "text-danger" })
                     <div class="form-group">
                         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
@@ -43,8 +41,7 @@
                     </div>
                     <br />
                     <br />
-                    <br />
-
+          
                     <div class="form-group">
                         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
                         <div class="col-md-10">
@@ -73,13 +70,15 @@
              
              }
                 <div class="modal-footer">
+                    @Html.ActionLink("Cancel", "Index", "Home", null, new { @class = "btn btn-default" })
                 </div>
             </div>
         </div>
     </div>
+    </div> 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.0/raphael-min.js"></script>
 

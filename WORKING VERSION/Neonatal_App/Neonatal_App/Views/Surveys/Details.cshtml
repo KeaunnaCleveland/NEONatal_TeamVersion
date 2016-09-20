@@ -270,8 +270,8 @@
     </div>
     <!--navigation-->
     <p>
-        @Html.ActionLink("Edit", "Edit", null, new { id = Model.id, @class="btn btn-default"}) 
-        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Edit", "Edit",  new { id = Model.id, @class="btn btn-default"}) | 
+        @Html.ActionLink("Back to List", "Index")
     </p>
     </body>
     </html>
